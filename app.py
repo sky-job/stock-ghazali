@@ -8,7 +8,7 @@ st.set_page_config(page_title="Ghazali Stock Pro", layout="wide")
 url = "https://docs.google.com/spreadsheets/d/1vMgzCYFD2s7UVQ-TQ7ZK2A162QObv6c936Sx5X5uDt0/edit?usp=sharing"
 
 conn = st.connection("gsheets", type=GSheetsConnection)
-df = conn.read(spreadsheet=url)
+df = conn.read(spreadsheet=url, ttl=10)
 df = df.dropna(how="all") 
 
 st.title("🧪 Inventaire Ghazali Parfums (Mode Cloud)")
