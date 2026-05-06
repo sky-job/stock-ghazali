@@ -13,6 +13,13 @@ df = df.dropna(how="all")
 
 st.title("🧪 Inventaire Ghazali Parfums (Mode Cloud)")
 
+# --- BOUTON D'ACTUALISATION ---
+if st.button("🔄 Actualiser les données"):
+    st.cache_data.clear()
+    st.rerun()
+st.divider() # Ajoute une petite ligne de séparation esthétique
+# -----------------------------
+
 # --- RECHERCHE ---
 st.markdown("### 🔍 Recherche rapide")
 col_choix, col_texte = st.columns([1, 3])
